@@ -15,20 +15,20 @@ const imageSwitch = (color) => {
     image3.src = `img/healthy_habit_${color}.svg`;
 };
 
-const toggleTheme = (DARK_THEME) => {
-    nav.style.backgroundColor = DARK_THEME
-        ? "rgb(0 0 0 / 50%)"
-        : "rgb(255 255 255 / 50%)";
-    textBox.style.backgroundColor = DARK_THEME
-        ? "rgb(255 255 255 / 50%"
-        : "rgb(0 0 0 / 50%)";
-    toggleIcon.children[0].textContent = DARK_THEME
-        ? "Dark Mode"
-        : "Light Mode";
-    DARK_THEME
-        ? toggleIcon.children[1].classList.replace("fa-sun", "fa-moon")
-        : toggleIcon.children[1].classList.replace("fa-moon", "fa-sun");
-    DARK_THEME ? imageSwitch(DARK_THEME) : imageSwitch(LIGHT_THEME);
+const toggleTheme = (theme) => {
+    if (theme === DARK_THEME) {
+        nav.style.backgroundColor = "rgb(0 0 0 / 50%)";
+        textBox.style.backgroundColor = "rgb(255 255 255 / 50%";
+        toggleIcon.children[0].textContent = "Dark Mode";
+        toggleIcon.children[1].classList.replace("fa-sun", "fa-moon");
+        imageSwitch(DARK_THEME);
+    } else if (theme === LIGHT_THEME) {
+        nav.style.backgroundColor = "rgb(255 255 255 / 50%)";
+        textBox.style.backgroundColor = "rgb(0 0 0 / 50%)";
+        toggleIcon.children[0].textContent = "Light Mode";
+        toggleIcon.children[1].classList.replace("fa-moon", "fa-sun");
+        imageSwitch(LIGHT_THEME);
+    }
 };
 
 // Switch Theme
