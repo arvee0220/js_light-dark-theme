@@ -48,7 +48,7 @@ const switchTheme = (event) => {
 // Event Listener
 toggleSwitch.addEventListener("change", switchTheme);
 
-// Check Local Storage For Theme - It reloads the previous theme used
+// Check Local Storage in google console(application) for Theme - It reloads the previous theme used that is saved in the browser's local storage
 const currentTheme = localStorage.getItem("theme");
 
 if (currentTheme) {
